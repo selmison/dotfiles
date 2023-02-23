@@ -14,11 +14,15 @@ local options = {
   numberwidth = 2,           -- minimal number of columns to use for the line number
   timeoutlen = 1000,         -- time to wait for a mapped sequence to complete (in milliseconds)
   title = false,             -- fix the error: insert mode current line has file path/name overlaid over text (https://github.com/LunarVim/LunarVim/issues/2986)
+  list = true                -- useful to see the difference between tabs and spaces and for trailing blanks
 }
 
 for k, v in pairs(options) do
   vim.opt[k] = v
 end
+
+vim.opt.listchars:append "space:⋅"
+vim.opt.listchars:append "eol:↴"
 
 -- Remove trailing white space
 vim.api.nvim_create_autocmd({ "BufWritePre" }, {
