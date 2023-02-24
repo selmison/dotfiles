@@ -12,7 +12,6 @@ local options = {
   shiftwidth = 2,            -- the number of spaces inserted for each indentation
   tabstop = 2,               -- insert 2 spaces for a tab
   numberwidth = 2,           -- minimal number of columns to use for the line number
-  timeoutlen = 1000,         -- time to wait for a mapped sequence to complete (in milliseconds)
   title = false,             -- fix the error: insert mode current line has file path/name overlaid over text (https://github.com/LunarVim/LunarVim/issues/2986)
   list = true                -- useful to see the difference between tabs and spaces and for trailing blanks
 }

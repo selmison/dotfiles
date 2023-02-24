@@ -37,8 +37,10 @@ keymap("n", "gg", "ggzz", opts)
 keymap("n", "G", "Gzz", opts)
 
 -- Insert blank lines without going into insert mode
-keymap("n", "oo", "o<ESC>k", opts)
-keymap("n", "OO", "O<ESC>j", opts)
+--vim.opt.timeoutlen = 1000 -- you'll just need to press the double oo quick enough (https://stackoverflow.com/questions/16134457/insert-a-newline-without-entering-in-insert-mode-vim#comment72864979_16136133)
+--keymap("n", "oo", "m`o<Esc>``", opts)
+
+--keymap("n", "OO", "m`o<Esc>``", opts)
 
 -- Insert --
 -- Press jk/kj fast to enter

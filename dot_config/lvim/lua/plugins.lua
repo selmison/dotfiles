@@ -44,7 +44,11 @@ lvim.plugins = {
   {
     "Pocco81/auto-save.nvim",
     config = function()
-      require'auto-save'.setup()
+      require'auto-save'.setup{
+        callbacks = {
+          before_saving = vim.lsp.buf.format()
+        }
+      }
     end,
   },
 }
@@ -91,5 +95,4 @@ lvim.builtin.treesitter.ensure_installed = {
 
 lvim.builtin.treesitter.ignore_install = { "haskell" }
 lvim.builtin.treesitter.highlight.enable = true
-
 
