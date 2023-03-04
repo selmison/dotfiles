@@ -5,9 +5,9 @@ lvim.plugins = {
   },
   {
     "ethanholz/nvim-lastplace",
-   event = "BufRead",
+    event = "BufRead",
     config = function()
-      require'nvim-lastplace'.setup{
+      require 'nvim-lastplace'.setup {
         lastplace_ignore_buftype = { "quickfix", "nofile", "help" },
         lastplace_ignore_filetype = { "gitcommit", "gitrebase", "svn", "hgcommit" },
         lastplace_open_folds = true,
@@ -15,9 +15,9 @@ lvim.plugins = {
     end,
   },
   {
-  "lewis6991/hover.nvim",
+    "lewis6991/hover.nvim",
     config = function()
-      require'hover'.setup {
+      require 'hover'.setup {
         init = function()
           -- Require providers
           require("hover.providers.lsp")
@@ -37,14 +37,14 @@ lvim.plugins = {
       }
 
       -- Setup keymaps
-      vim.keymap.set("n", "K", require("hover").hover, {desc = "hover.nvim"})
-      vim.keymap.set("n", "gK", require("hover").hover_select, {desc = "hover.nvim (select)"})
+      vim.keymap.set("n", "K", require("hover").hover, { desc = "hover.nvim" })
+      vim.keymap.set("n", "gK", require("hover").hover_select, { desc = "hover.nvim (select)" })
     end
   },
   {
     "Pocco81/auto-save.nvim",
     config = function()
-      require'auto-save'.setup{
+      require 'auto-save'.setup {
         callbacks = {
           before_saving = vim.lsp.buf.format()
         }
@@ -64,6 +64,7 @@ lvim.builtin.which_key.mappings["t"] = {
   l = { "<cmd>TroubleToggle loclist<cr>", "loclist" },
   r = { "<cmd>TroubleToggle lsp_references<cr>", "references" },
 }
+lvim.builtin.which_key.setup.plugins.presets.z = true
 
 lvim.builtin.alpha.active = true
 lvim.builtin.alpha.mode = "dashboard"
@@ -97,4 +98,3 @@ lvim.builtin.treesitter.ensure_installed = {
 
 lvim.builtin.treesitter.ignore_install = { "haskell" }
 lvim.builtin.treesitter.highlight.enable = true
-
